@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { selectUser, userSaved } from "../../reduxUser/userSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { userSaved } from "../../reduxUser/userSlice";
+import { useDispatch } from "react-redux";
 
 const Wrapper = styled.div`
   position: relative;
@@ -87,8 +87,6 @@ const Wrapper = styled.div`
     p {
       display: block;
       margin: 0.2rem 0.5rem 0 0;
-    }
-    svg {
     }
   }
 `;

@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth !important;
+  }
+
+  body {
+    @apply font-primary bg-cream-100;
+  }
+  .react-multi-carousel-track {
+    gap: 1rem;
+  }
+
+  @keyframes slide {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  body:has(.no-scroll) {
+    overflow: hidden !important;
+  }
+
+  h1 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-[44px] font-bold leading-[47px] 640:text-[47px] 640:leading-[52px] 1180:text-[55px] 1180:leading-[58px];
+  }
+
+  h4 {
+    @apply text-[32px] font-bold leading-[38px] 640:text-[41px] 640:leading-[45px];
+  }
+
+  .white-text {
+    @apply text-sm leading-6 text-white text-opacity-70;
+  }
+
+  p {
+    @apply text-base font-light leading-[26px] text-neutral-600;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .container {
+    @apply mx-auto max-w-[1296px] min-w-[360px] px-4;
+  }
+
+  .light-button {
+    @apply smooth h-10 rounded-xl bg-neutral-100 px-4 flex items-center text-center text-black font-semibold transition-colors;
+  }
+
+  .dark-button {
+    @apply smooth h-10 rounded-xl flex items-center bg-blackhue-100 px-4 text-center text-white font-semibold transition-colors;
+  }
+}
+
+@layer utilities {
+  .x-center {
+    @apply flex justify-center align-middle;
+  }
+
+  .x-between {
+    @apply flex justify-between align-middle;
+  }
+
+  .y-center {
+    @apply x-center flex-col;
+  }
+
+  .y-between {
+    @apply flex flex-col justify-between align-middle;
+  }
+
+  .smooth {
+    @apply duration-300 ease-linear;
+  }
+}
+
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  img[loading="lazy"] {
+    clip-path: inset(0.6px);
+  }
 }

@@ -3,7 +3,7 @@ import api from "./api/api";
 import AppTable from "./components/table/AppTable";
 import { ToastContainer } from "react-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { selectUser, userSaved } from "./reduxUser/userSlice";
+import { userSaved } from "./reduxUser/userSlice";
 
 function App() {
   const [getting, setGetting] = useState(false);
@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div>
-      <div className="">
+      <div>
         <h2 className="text-center text-3xl 880:text-4xl font-bold text-bold mt-20">
           Users
         </h2>

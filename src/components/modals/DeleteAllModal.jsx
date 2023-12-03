@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { toast } from "react-toast";
 
 const Wrapper = styled.div`
   position: relative;
@@ -14,39 +13,7 @@ const InnerWrapper = styled.div`
   padding-top: 1rem;
 `;
 
-const BlackBtn = styled.button`
-  border: none;
-  padding: 1em 1.7em;
-  border-radius: 73px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 function DeleteAllModal({ closeModal, details, getChange, num }) {
-  const customStyles = {
-    content: {
-      top: "30rem",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      borderRadius: "1.2rem",
-      paddingBottom: "1rem",
-      minWidth: "40rem",
-      maxWidth: "40rem",
-    },
-    overlay: {
-      backgroundColor: "rgb(24 24 24 / 10%)",
-      overflowY: "auto",
-    },
-  };
-
   const deleteSelected = (x) => {
     const list = [...details];
     list.splice(0, x);
